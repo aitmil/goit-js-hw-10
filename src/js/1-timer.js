@@ -7,6 +7,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const input = document.querySelector('.date-input');
 const startButton = document.querySelector('.start-button');
 const timer = document.querySelector('.timer');
+console.log(timer.children[0].firstElementChild.innerHTML);
 
 startButton.setAttribute('disabled', '');
 let userSelectedDate;
@@ -43,8 +44,11 @@ startButton.addEventListener('click', () => {
     const currentDate = Date.now();
     const userDate = Date.parse(JSON.parse(localStorage.getItem('userDate')));
     const diff = userDate - currentDate;
-    const time = convertMs(diff);
-    timer.textContent = addLeadingZero(time);
+    const time = addLeadingZero(convertMs(diff));
+    timer.children[0].firstElementChild.innerHTML = time[0];
+    timer.children[1].firstElementChild.innerHTML = time[1];
+    timer.children[2].firstElementChild.innerHTML = time[2];
+    timer.children[3].firstElementChild.innerHTML = time[3];
     if (diff < 1000) clearInterval(intervalId);
   }, 1000);
 });
@@ -74,5 +78,5 @@ function addLeadingZero({ days, hours, minutes, seconds }) {
     hours.toString().padStart(2, '0'),
     minutes.toString().padStart(2, '0'),
     seconds.toString().padStart(2, '0'),
-  ].join(':');
+  ];
 }
