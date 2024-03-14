@@ -7,7 +7,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 const input = document.querySelector('.date-input');
 const startButton = document.querySelector('.start-button');
 const timer = document.querySelector('.timer');
-console.log(timer.children[0].firstElementChild.innerHTML);
 
 startButton.setAttribute('disabled', '');
 let userSelectedDate;
