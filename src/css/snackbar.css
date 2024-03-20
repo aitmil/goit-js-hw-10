@@ -34,6 +34,7 @@
 .delay-input:focus,
 .delay-input:active {
   border: 1px solid #4e75ff;
+  outline: none;
 }
 
 fieldset {
@@ -61,6 +62,10 @@ fieldset {
 
 .submit-btn:hover {
   background-color: #6c8cff;
+}
+.submit-btn:active,
+.submit-btn:focus {
+  outline: none;
 }
 
 .iziToast.iziToast-color-red {

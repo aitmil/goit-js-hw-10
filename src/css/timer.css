@@ -22,9 +22,11 @@
   border: 1px solid #000;
 }
 
-.flatpickr-input:not[disabled]:active {
+.flatpickr-input:not[disabled]:active,
+.flatpickr-input:not[disabled]:focus {
   border: 1px solid #4e75ff;
   color: #000;
+  outline: none;
 }
 
 .flatpickr-input[disabled] {
@@ -55,6 +57,11 @@
 
 .start-button:not[disabled]:hover {
   background-color: #6c8cff;
+}
+
+.start-button:focus,
+.start-button:active {
+  outline: none;
 }
 
 .timer {
